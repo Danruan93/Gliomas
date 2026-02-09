@@ -32,6 +32,17 @@ All files are grouped by cohort (FZ / BJ / XM) with consistent naming rules.
 [cohort]_Lesion_contrast_enhancement.xlsx: Lesion contrast enhancement annotation
 
 **Usage Notes**
-FZ is used for model training, validation, and feature selection.
-BJ and XM are used as independent external test sets for model generalization evaluation.
-All radiomic features are extracted in consistent processing pipeline.
+1. Dataset Usage
+
+  FZ cohort serves as the training dataset, which is used for model training, internal validation, and radiomic feature selection.
+  BJ and XM cohorts are utilized as independent external test datasets to evaluate the generalization performance of the developed models.
+  
+2. Script Functions
+
+  train_data.r: Processes the training dataset (FZ cohort), performs dimensionality reduction, and selects key radiomic features.
+  test1.r & test2.r: Conduct preprocessing and feature alignment for the BJ and XM test datasets, respectively.
+  models.r: Implements the construction of predictive models (e.g., classification/regression models) and computes the corresponding prediction results (e.g., performance metrics, prediction outputs).
+  
+3. Feature Extraction
+
+  All radiomic features are extracted using a standardized and consistent processing pipeline to ensure reproducibility.
